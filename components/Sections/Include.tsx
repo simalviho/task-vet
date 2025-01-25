@@ -98,23 +98,10 @@ const sections = [
   },
 ];
 
-interface SectionData {
-  id: number;
-  title: string;
-  icon: any;
-  items: {
-    id: number;
-    icon: any;
-    title: string;
-    text: string;
-  }[];
-}
-
 const Include: React.FC<IncludeProps> = () => {
   const [select, setSelect] = useState<number>(2);
   const data = sections.filter((e) => e.id === select);
 
-  console.log(data);
   return (
     <div>
       <div className="xl:px-[137px] md:px-8 px-4 bg-[#2b75dd] py-12 flex flex-col items-center justify-center text-white flex items-center justify-center">

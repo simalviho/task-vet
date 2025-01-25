@@ -8,8 +8,8 @@ interface AccordionProps {
     text: string;
     id: number;
   };
-  isOpen: boolean; // Açık mı değil mi kontrol ediliyor
-  onToggle: () => void; // Tıklandığında çağrılan fonksiyon
+  isOpen: boolean;
+  onToggle: () => void;
 }
 
 const Accordion: React.FC<AccordionProps> = ({ data, isOpen, onToggle }) => {
