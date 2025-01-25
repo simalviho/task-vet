@@ -1,0 +1,181 @@
+"use client";
+import React, { useEffect, useRef, useState } from "react";
+import { IoClose, IoMenu } from "react-icons/io5";
+import LoginForm from "../Sections/LoginForm";
+
+interface HeaderProps {}
+
+const nav = [
+  {
+    id: 1,
+    title: "Özellikler",
+    href: "",
+  },
+  {
+    id: 2,
+    title: "Fiyatlar",
+    href: "",
+  },
+  {
+    id: 3,
+    title: "Referanslar",
+    href: "",
+  },
+  {
+    id: 4,
+    title: "Fazlası",
+    href: "",
+  },
+];
+
+const Header: React.FC<HeaderProps> = ({}) => {
+  const [open, setOpen] = useState<boolean>(false);
+  const [openForm, setOpenForm] = useState<boolean>(false);
+
+  const [menuHeight, setMenuHeight] = useState(0);
+  const menuRef = useRef<HTMLDivElement | null>(null);
+
+  useEffect(() => {
+    if (menuRef.current) {
+      setMenuHeight(menuRef.current.scrollHeight);
+    }
+  }, [nav]);
+  return (
+    <div className="">
+      <div className="lg:bg-[#2b74dd] bg-white py-4 flex flex-col w-full xl:px-[137px] md:px-8 px-4">
+        <div className="lg:grid lg:grid-cols-[200px_1fr_400px] flex items-center justify-between w-full">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            className="w-[140px] h-[40px] lg:text-white text-[#2b74dd]"
+            fill="currentColor"
+            viewBox="0 0 186.89 52.99"
+          >
+            <defs>
+              <style></style>
+            </defs>
+            <title>logo_beyaz</title>
+            <g id="katman_2" data-name="katman 2">
+              <g id="katman_1-2" data-name="katman 1">
+                <path
+                  className="cls-1"
+                  d="M1.74,0A1.65,1.65,0,0,1,2.92.46a1.67,1.67,0,0,1,.49,1.2V22.18H6.08a10.42,10.42,0,0,0,7.17-2.75,10.28,10.28,0,0,0,3.43-6.76,1.59,1.59,0,0,1,.54-1.06,1.65,1.65,0,0,1,1.12-.44h.08A1.65,1.65,0,0,1,20.06,13q-.6,6.12-6.54,10.57a16.39,16.39,0,0,1,5.94,5.64,13.77,13.77,0,0,1,1.88,7v1.39a1.67,1.67,0,0,1-1.66,1.66H19.6a1.6,1.6,0,0,1-1.18-.49,1.63,1.63,0,0,1-.49-1.17V36.25a10.25,10.25,0,0,0-3.13-7.5,10.32,10.32,0,0,0-7.52-3.11H3.41v12a1.63,1.63,0,0,1-.49,1.17,1.6,1.6,0,0,1-1.18.49H1.66a1.59,1.59,0,0,1-1.17-.49A1.59,1.59,0,0,1,0,37.64v-36A1.63,1.63,0,0,1,.49.46,1.65,1.65,0,0,1,1.66,0Z"
+                />
+                <path
+                  className="cls-1"
+                  d="M36.71,11.17a13.56,13.56,0,0,1,9.94,4.12,13.53,13.53,0,0,1,4.12,10,13.52,13.52,0,0,1-4.12,9.94,13.52,13.52,0,0,1-9.94,4.12,13.53,13.53,0,0,1-9.95-4.12,13.56,13.56,0,0,1-4.12-9.94,13.57,13.57,0,0,1,4.12-9.95A13.57,13.57,0,0,1,36.71,11.17Zm0,3.46a10.29,10.29,0,0,0-7.55,3.14,10.35,10.35,0,0,0-3.11,7.55A10.65,10.65,0,0,0,36.71,36a10.15,10.15,0,0,0,7.52-3.13,10.26,10.26,0,0,0,3.13-7.52,10.29,10.29,0,0,0-3.13-7.55A10.16,10.16,0,0,0,36.71,14.63Z"
+                />
+                <path
+                  className="cls-1"
+                  d="M55.72,0a1.62,1.62,0,0,1,1.67,1.66v36a1.63,1.63,0,0,1-.49,1.17,1.6,1.6,0,0,1-1.18.49h-.08A1.67,1.67,0,0,1,54,37.64v-36a1.63,1.63,0,0,1,.49-1.2A1.65,1.65,0,0,1,55.64,0Z"
+                />
+                <path
+                  className="cls-1"
+                  d="M85.43,15.29a13.56,13.56,0,0,1,4.11,10v12.4a1.67,1.67,0,0,1-1.66,1.66H87.8a1.6,1.6,0,0,1-1.18-.49,1.63,1.63,0,0,1-.49-1.17V34.56Q80.79,39.3,75.48,39.3a13.53,13.53,0,0,1-10-4.12,13.55,13.55,0,0,1-4.11-9.94,13.56,13.56,0,0,1,4.11-9.95,14.07,14.07,0,0,1,19.9,0Zm-17.5,2.42a10.32,10.32,0,0,0-3.11,7.53A10.6,10.6,0,0,0,75.48,35.89,10.64,10.64,0,0,0,86.13,25.24,10.26,10.26,0,0,0,83,17.71a10.13,10.13,0,0,0-7.52-3.13A10.29,10.29,0,0,0,67.93,17.71Z"
+                />
+                <path
+                  className="cls-1"
+                  d="M95.89,27.17A8.14,8.14,0,0,0,104,35.32a7.69,7.69,0,0,0,5.72-2.4,7.72,7.72,0,0,0,2.4-5.75V12.86a1.67,1.67,0,0,1,1.69-1.69h.05a1.6,1.6,0,0,1,1.17.49,1.63,1.63,0,0,1,.49,1.2V38.94A11.08,11.08,0,0,1,112,47.12,11.06,11.06,0,0,1,104,50.5a12.54,12.54,0,0,1-6.63-1.8,11.08,11.08,0,0,1-4.3-4.6,1.5,1.5,0,0,1-.06-1.37,1.55,1.55,0,0,1,1-.95l.11-.06a1.58,1.58,0,0,1,1.09,0,1.81,1.81,0,0,1,.87.79,8.17,8.17,0,0,0,3.22,3.3A9.12,9.12,0,0,0,104,47.09a8.28,8.28,0,0,0,8.12-8.15V35.51q-4.34,3.2-8.12,3.19A11.54,11.54,0,0,1,92.48,27.17V12.86a1.67,1.67,0,0,1,1.66-1.69h.08a1.64,1.64,0,0,1,1.18.49,1.67,1.67,0,0,1,.49,1.2Z"
+                />
+                <path
+                  className="cls-1"
+                  d="M130.05,30.86l7.89-18.41a2.83,2.83,0,0,1,2.79-1.84h.05A2.83,2.83,0,0,1,143.29,12a2.76,2.76,0,0,1,.25,2.84L134.3,36.41a4.56,4.56,0,0,1-8.49,0l-9.26-21.59a3.11,3.11,0,0,1-.25-1.2,2.94,2.94,0,0,1,.52-1.64,2.86,2.86,0,0,1,2.52-1.37h.07a2.79,2.79,0,0,1,2.77,1.84q5.94,13.92,6.87,16C129.05,28.56,129.38,29.35,130.05,30.86Z"
+                />
+                <path
+                  className="cls-1"
+                  d="M171.16,19a3,3,0,0,1-1.5,4l-9.16,4.13q-7,3.19-8.27,3.76c1.26,1.6,3.23,2.39,5.9,2.39A8,8,0,0,0,163,31.7a8.1,8.1,0,0,0,3-4,2.81,2.81,0,0,1,2.89-2A2.88,2.88,0,0,1,171.28,27a2.83,2.83,0,0,1,.57,1.67,3.14,3.14,0,0,1-.19,1.07,13.75,13.75,0,0,1-5.16,6.87A14.34,14.34,0,0,1,143.79,25,13.8,13.8,0,0,1,148,14.82,14.27,14.27,0,0,1,166,13,14,14,0,0,1,171.16,19Zm-13-2.22A8.21,8.21,0,0,0,149.89,25v.17L163.81,19Q162,16.76,158.13,16.76Z"
+                />
+                <path
+                  className="cls-1"
+                  d="M177.13.4a3,3,0,0,1,3,3v7.2h3.74a2.87,2.87,0,0,1,2.11.9,2.92,2.92,0,0,1,.9,2.14v0a2.8,2.8,0,0,1-.9,2.12,2.9,2.9,0,0,1-2.11.89h-3.74V31.48a1.67,1.67,0,0,0,.5,1.22,1.7,1.7,0,0,0,1.24.5h2a2.9,2.9,0,0,1,2.11.89,2.94,2.94,0,0,1,.9,2.15v0a2.77,2.77,0,0,1-.9,2.11,2.87,2.87,0,0,1-2.11.9h-2A7.82,7.82,0,0,1,174,31.48V3.41a2.92,2.92,0,0,1,.9-2.14A2.93,2.93,0,0,1,177.05.4Z"
+                />
+                <path
+                  className="cls-1"
+                  d="M33.9,27.54a.94.94,0,0,0,.94-.94v-.55a2.37,2.37,0,0,1,4.73,0v.55a.94.94,0,0,0,1.88,0v-.55a4.25,4.25,0,0,0-8.49,0v.55A.94.94,0,0,0,33.9,27.54Z"
+                />
+                <path
+                  className="cls-1"
+                  d="M72.9,27.54a.94.94,0,0,0,.94-.94v-.55a2.37,2.37,0,0,1,4.73,0v.55a.94.94,0,1,0,1.88,0v-.55a4.25,4.25,0,0,0-8.49,0v.55A.94.94,0,0,0,72.9,27.54Z"
+                />
+                <path
+                  className="cls-1"
+                  d="M43.92,46.32A6.67,6.67,0,0,0,55.8,50.49a6.67,6.67,0,0,0,11.87-4.17,1.48,1.48,0,1,0-3,0,3.72,3.72,0,0,1-7.38.66l1.51-2.63a1.5,1.5,0,0,0,0-1.48,1.48,1.48,0,0,0-1.28-.73H54a1.47,1.47,0,0,0-1.28,2.21L54.26,47a3.72,3.72,0,0,1-7.38-.66,1.48,1.48,0,0,0-3,0Z"
+                />
+              </g>
+            </g>
+          </svg>
+          <ul className="hidden lg:flex items-center justify-center gap-x-5">
+            {nav.map((e, idx) => (
+              <li key={idx} className="text-white text-lg font-semibold">
+                {e.title}
+              </li>
+            ))}
+          </ul>
+          <div className="hidden lg:flex items-center justify-end gap-x-4">
+            <button
+              onClick={() => setOpenForm(true)}
+              className="px-3 cursor-pointer py-2 whitespace-nowrap bg-white rounded-full text-lg text-[#2b74dd]"
+            >
+              Ücretsiz Deneyin
+            </button>
+            <button className="px-3 py-2 whitespace-nowrap text-white ">
+              Giriş Yapın
+            </button>
+          </div>
+          <div
+            className="lg:hidden flex items-center cursor-pointer"
+            onClick={() => setOpen(!open)}
+          >
+            {open ? (
+              <IoClose className="w-8 h-8 text-[#2b74dd]" />
+            ) : (
+              <IoMenu className="w-8 h-8 text-[#2b74dd]" />
+            )}
+          </div>
+        </div>
+      </div>
+      <div
+        ref={menuRef}
+        className={`lg:hidden w-full bg-black/80 overflow-hidden transition-[max-height] duration-300 ease-in-out`}
+        style={{
+          maxHeight: open ? `${menuHeight}px` : "0px",
+        }}
+      >
+        <ul
+          className={`flex flex-col gap-y-2 pb-2 pt-4 divide-y divide-gray-400 transition-opacity duration-200 ease-in-out ${
+            open ? "opacity-100" : "opacity-0"
+          }`}
+        >
+          {nav.map((e, idx) => (
+            <li
+              key={idx}
+              className="text-white px-8 pb-2 text-lg font-semibold"
+            >
+              {e.title}
+            </li>
+          ))}
+          <div className="flex items-center justify-center w-full pt-4 px-4 gap-x-4">
+            <button
+              onClick={() => setOpenForm(true)}
+              className="px-3 cursor-pointer w-full py-2 whitespace-nowrap border-white border text-lg text-white"
+            >
+              Ücretsiz Deneyin
+            </button>
+            <button className="px-3 py-2 w-full border-white border whitespace-nowrap text-white ">
+              Giriş Yapın
+            </button>
+          </div>
+        </ul>
+      </div>
+      {openForm && (
+        <div className="fixed inset-0 w-full h-screen z-[999]">
+          <div className="relative inset-0 bg-black/80 w-full h-screen"></div>
+          <div className="absolute flex flex-col items-center justify-center inset-0 gap-y-4 p-2">
+            <LoginForm setOpenForm={setOpenForm} />
+          </div>
+        </div>
+      )}
+    </div>
+  );
+};
+
+export default Header;
