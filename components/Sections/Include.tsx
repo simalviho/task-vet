@@ -6,7 +6,7 @@ import svg2 from "../../public/images/svg2.svg";
 import svg3 from "../../public/images/svg3.svg";
 import Image from "next/image";
 
-interface IncludeProps {}
+type IncludeProps = object;
 
 const sections = [
   {

@@ -2,7 +2,7 @@ import React from "react";
 import news from "../../public/images/news.jpg";
 import NewsCard from "../Cards/NewsCard";
 
-interface NewsProps {}
+type NewsProps = object;
 
 const newsData = [
   {

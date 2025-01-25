@@ -2,7 +2,7 @@ import React from "react";
 import mobile from "../../public/images/mobile.png";
 import Image from "next/image";
 
-interface MobileBannerProps {}
+type MobileBannerProps = object;
 
 const MobileBanner: React.FC<MobileBannerProps> = () => {
   return (

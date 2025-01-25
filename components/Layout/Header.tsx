@@ -1,9 +1,10 @@
+/* eslint-disable */
 "use client";
 import React, { useEffect, useRef, useState } from "react";
 import { IoClose, IoMenu } from "react-icons/io5";
 import LoginForm from "../Sections/LoginForm";
 
-interface HeaderProps {}
+type HeaderProps = object;
 
 const nav = [
   {

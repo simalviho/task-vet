@@ -1,4 +1,4 @@
-import Image from "next/image";
+import Image, { StaticImageData } from "next/image";
 import React from "react";
 
 interface NewsCardProps {
@@ -7,7 +7,7 @@ interface NewsCardProps {
     date: string;
     title: string;
     text: string;
-    image: any;
+    image: StaticImageData;
   };
 }
 

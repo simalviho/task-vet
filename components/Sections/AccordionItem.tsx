@@ -1,5 +1,5 @@
 "use client";
-import React, { useState } from "react";
+import React from "react";
 import { FaAngleRight } from "react-icons/fa";
 
 interface AccordionProps {
@@ -13,8 +13,6 @@ interface AccordionProps {
 }
 
 const Accordion: React.FC<AccordionProps> = ({ data, isOpen, onToggle }) => {
-  const [open, setOpen] = useState<boolean>(false);
-
   return (
     <div className="bg-white w-full shadow-md">
       <div

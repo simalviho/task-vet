@@ -2,7 +2,7 @@ import Image from "next/image";
 import React from "react";
 import pet from "../../public/images/pet.png";
 
-interface BannerProps {}
+type BannerProps = object;
 
 const Banner: React.FC<BannerProps> = ({}) => {
   return (

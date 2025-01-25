@@ -2,7 +2,7 @@
 import React, { useState } from "react";
 import Accordion from "./AccordionItem";
 
-interface FaqProps {}
+type FaqProps = object;
 
 const questions = [
   {

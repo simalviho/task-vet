@@ -26,9 +26,6 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <head>
-        <link href="/dist/styles.css" rel="stylesheet" />
-      </head>
       <body
         className={`min-w-[320px] relative ${geistSans.variable} ${geistMono.variable} antialiased`}
       >

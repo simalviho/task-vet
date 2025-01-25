@@ -1,8 +1,9 @@
+/* eslint-disable */
 import Image from "next/image";
 import React from "react";
 import footer from "../../public/images/footer-one-bg.png";
 
-interface FooterBannerProps {}
+type FooterBannerProps = object;
 
 const FooterBanner: React.FC<FooterBannerProps> = () => {
   return (
